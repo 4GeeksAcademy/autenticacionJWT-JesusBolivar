@@ -7,7 +7,7 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context)
 	return (
-		<nav className="navbar navbar-dark bg-dark">
+		<nav className="navbar navbar-dark bg-ligth">
 			<div className="container">
 				<Link className="name" to="/">
 					<span>JWT</span>
@@ -16,10 +16,10 @@ export const Navbar = () => {
 						
 					{!store.token ?
 						<Link to="/login">
-							<button className="btn boton me-2">Login</button>
+							<button className="btn boton bg'info me-2">Login</button>
 						</Link> :
 						<Link to="/">
-							<button onClick={() => actions.close()} className="btn boton">Logout</button>
+							<button onClick={() => actions.close()} className="btn boton bg-danger">Logout</button>
 						</Link>
 					}
 				</div>

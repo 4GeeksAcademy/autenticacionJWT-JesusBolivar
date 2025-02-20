@@ -51,6 +51,17 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             },
 
+                 //cerrar sesion
+                 close: () => {
+                    setStore({
+                        token: null,
+                        currentUser: null
+                    })
+                    localStorage.removeItem("token")
+                    localStorage.removeItem("currentUser")
+                },
+    
+
 		}
 	};
 };

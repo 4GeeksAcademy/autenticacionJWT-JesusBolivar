@@ -27,7 +27,7 @@ export const Login = () => {
         try {
             const result = await actions.login(credentials);
             if (result == 200) {
-                navigate("/profile");
+                navigate("/private");
                 setLoggedIn(true);
                 setTimeout(() => {
                     setLoggedIn(false);
@@ -46,10 +46,10 @@ export const Login = () => {
 
     return (
         <div className="container d-flex flex-column traslate">
-            <h1 className="fs-1 text-center">Iniciar Sesión</h1>
+            <h1 className="fs-1 text-center">Login</h1>
             <form className="form w-50 align-self-center p-2 my-3" onSubmit={handleLogin}>
                 <div className="mb-3">
-                    <label htmlFor="inputUsername" className="form-label">Nombre de Usuario</label>
+                    <label htmlFor="inputUsername" className="form-label">Username</label>
                     <input
                         type="username"
                         className="form-control"
@@ -61,7 +61,7 @@ export const Login = () => {
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="inputPassword" className="form-label">Contraseña</label>
+                    <label htmlFor="inputPassword" className="form-label">Password</label>
                     <input
                         type="password"
                         className="form-control"
@@ -73,9 +73,9 @@ export const Login = () => {
                     />
                 </div>
 
-                <button type="submit" className="btn boton1 w-100">Iniciar Sesión</button>
+                <button type="submit" className="btn boton1 w-100">login</button>
                 {loggedIn && <div className="alert alert-success mt-3" role="alert">
-                    Sesión iniciada con éxito
+                    login success
                 </div>}
             </form>
 
@@ -83,12 +83,12 @@ export const Login = () => {
 
             <div className="w-50 d-flex justify-content-between align-items-center align-self-center">
                 <Link className="ps-1" to="/">
-                    <button className="btn btn-dark">Regresar</button>
+                    <button className="btn btn-danger">Back</button>
                 </Link>
                
             </div>
             <div className="w-50 d-flex justify-content-center align-self-center mt-4">
-                <p>No tienes cuenta? <Link to="/register">Registrate</Link></p>
+                <p>You don't have an account? <Link to="/register">Register</Link></p>
             </div>
         </div>
     );
