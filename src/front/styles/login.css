@@ -1,0 +1,12 @@
+.traslate{
+    transform: translateY(30%);
+}
+
+.boton1{
+    background-color: rgb(63, 166, 37);
+    color: aliceblue;
+}
+
+.traslate2{
+    transform: translateY(8rem);
+}
